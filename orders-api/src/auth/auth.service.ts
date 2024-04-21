@@ -22,8 +22,14 @@ export class AuthService {
     const user = users.find(
       (user) => user.username === username && user.password === password,
     );
-    if (user) {
+    if (!user) {
       throw new UnauthorizedException('Invalid credentials');
     }
+
+    const payload = { username: user.username, sub: user.id };
+
+    return {
+      access_token: this.jwtService.sign(payload),
+    };
   }
 }
