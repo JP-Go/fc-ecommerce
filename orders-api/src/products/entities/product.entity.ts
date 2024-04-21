@@ -12,6 +12,8 @@ export class Product {
   description: string;
   @Column()
   price: number;
-  @Column('image_url')
+  @Column({
+    name: 'image_url',
+  })
   imageUrl: string;
 }
