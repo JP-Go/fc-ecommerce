@@ -36,7 +36,7 @@ export class OrdersController {
     const order = await this.ordersService.findOne(id, request['user'].sub);
     if (!order) {
       throw new UnauthorizedException(
-        'This order from not placed by your account.',
+        'This order was not placed by your account.',
       );
     }
     return;
