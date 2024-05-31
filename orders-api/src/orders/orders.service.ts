@@ -20,7 +20,7 @@ export class OrdersService {
     });
     if (products.length !== uniqueProductIds.length) {
       throw new Error(
-        `Algum produto não existe. Produtos pedidos: ${productIds}, Pedidos encontrados: ${products.map((product) => product.id)}`,
+        `Algum produto não existe. Produtos pedidos: ${uniqueProductIds}, Pedidos encontrados: ${products.map((product) => product.id)}`,
       );
     }
     const order = Order.create({
