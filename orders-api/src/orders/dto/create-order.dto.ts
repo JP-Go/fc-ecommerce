@@ -8,7 +8,6 @@ import {
   IsPositive,
   Min,
   IsInt,
-  IsUUID,
 } from 'class-validator';
 
 export class CreateOrderDto {
@@ -31,7 +30,6 @@ export class OrderItemDto {
   quantity: number;
 
   @IsNotEmpty()
-  @IsUUID()
   @IsString()
   @MaxLength(36)
   productId: string;

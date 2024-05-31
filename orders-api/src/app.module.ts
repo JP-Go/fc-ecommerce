@@ -9,6 +9,7 @@ import { Order } from './orders/entities/order.entity';
 import { OrderItem } from './orders/entities/order-item.entity';
 import { AuthModule } from './auth/auth.module';
 import { AuthGuard } from './auth/auth.guard';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 
 @Global()
 @Module({
@@ -27,6 +28,7 @@ import { AuthGuard } from './auth/auth.guard';
     ProductsModule,
     OrdersModule,
     AuthModule,
+    RabbitmqModule,
   ],
   controllers: [AppController],
   providers: [AppService, AuthGuard],
