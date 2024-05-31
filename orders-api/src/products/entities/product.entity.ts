@@ -10,7 +10,7 @@ export class Product {
   name: string;
   @Column({ type: 'text' })
   description: string;
-  @Column()
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
   price: number;
   @Column({
     name: 'image_url',
