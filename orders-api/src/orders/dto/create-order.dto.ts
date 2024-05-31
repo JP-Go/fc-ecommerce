@@ -12,7 +12,7 @@ import {
 } from 'class-validator';
 
 export class CreateOrderDto {
-  @ValidateNested()
+  @ValidateNested({ each: true })
   @ArrayNotEmpty()
   @Type(() => OrderItemDto)
   items: OrderItemDto[];
